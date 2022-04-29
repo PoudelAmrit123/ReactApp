@@ -22,6 +22,17 @@ import React , {useState} from 'react'
        }
 
 
+     const handleCopyChange = ()=> {
+        let text = document.getElementById("myBox");
+            text.select();
+           navigator.clipboard.writeText(text.value);
+
+
+     }
+
+
+
+
        const handleClearChange = ()=> {
 
         let newText = '';
@@ -60,7 +71,8 @@ import React , {useState} from 'react'
 </div>
    <button className="btn btn-primary mx-2"  onClick={handleUpChange}> Convert to UpperClass</button>
    <button className="btn btn-primary mx-2"  onClick={handleLoChange}> Convert to LowerClass</button>
-   <button className="btn btn-primary"  onClick={handleClearChange}> Clear Text</button>
+   <button className="btn btn-primary  mx-2"  onClick={handleClearChange}> Clear Text</button>
+   <button className="btn btn-primary"  onClick={handleCopyChange}> Copy Text</button>
    
 </div>
 
