@@ -22,13 +22,31 @@ import React , {useState} from 'react'
        }
 
 
+       const handleClearChange = ()=> {
+
+        let newText = '';
+        setText(newText);
+          
+       }
+
+    
+
+
+
+
+
+
+
+
+
+
       const handleOnChange = (event)=> {
 
     
           setText(event.target.value);
 
       }
-      const [text,setText] = useState('  ')
+      const [text,setText] = useState('')
 
       return (
         
@@ -41,7 +59,9 @@ import React , {useState} from 'react'
 
 </div>
    <button className="btn btn-primary mx-2"  onClick={handleUpChange}> Convert to UpperClass</button>
-   <button className="btn btn-primary"  onClick={handleLoChange}> Convert to LowerClass</button>
+   <button className="btn btn-primary mx-2"  onClick={handleLoChange}> Convert to LowerClass</button>
+   <button className="btn btn-primary"  onClick={handleClearChange}> Clear Text</button>
+   
 </div>
 
                   <div className="container my-3">
