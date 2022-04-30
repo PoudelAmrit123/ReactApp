@@ -1,6 +1,9 @@
-import React , {useState} from 'react'
+import React , {useState} from 'react';
 
 
+
+
+ 
   export default function TextForm(props){
 
     
@@ -62,11 +65,11 @@ import React , {useState} from 'react'
       return (
         
          <>
-          <div className='container'>
+          <div className='container '  style= {{color :  props.mode==='light'? 'dark':'light'}}>
   <h1>{props.heading}</h1>
 <div className="mb-3">
 
-  <textarea className="form-control" value={text}  onChange= {handleOnChange}  id="myBox" rows="3"></textarea>
+  <textarea className="form-control" value={text} style={ {backgroundColor : props.mode==='light'? 'dark':'light'}} onChange= {handleOnChange}  id="myBox" rows="3"></textarea>
 
 </div>
    <button className="btn btn-primary mx-2"  onClick={handleUpChange}> Convert to UpperClass</button>
@@ -76,12 +79,12 @@ import React , {useState} from 'react'
    
 </div>
 
-                  <div className="container my-3">
+                  <div className="container my-3" style= {{color :  props.mode==='light'? 'dark':'light'}}>
                   <h1> Your Text Summary </h1>
                     <p>  {text.split(" ").length} WORDS and {text.length} CHARACTER</p>
                     <p>  { 0.008 * text.split(" ").length} Minute to Read</p>
                     <h3> Preview</h3>
-                      <p> {text}</p>
+                      <p> {text.length>0 ? text : " Enter Your Text Here To Preview"}</p>
 
                   </div>
 

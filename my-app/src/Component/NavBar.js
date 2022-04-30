@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 
       export default function Navbar (props){
@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
         return (
 
             <>
-             <nav className="navbar navbar-expand-lg navbar-light bg-light">
+             <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
      <div className="container-fluid">
        <a className="navbar-brand" href="/"> {props.title}</a>
        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,12 @@ import PropTypes from 'prop-types'
          <form className="d-flex">
            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
            <button className="btn btn-outline-success" type="submit">Search</button>
+         
          </form>
+         <div className={`form-check form-switch text-${props.mode==='light'? 'dark':'light'}  `}  >
+  <input className="form-check-input" type="checkbox" role="switch" onClick={props.toggle} id="flexSwitchCheckDefault "/>
+  <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`Enable ${props.mode==='light'? 'dark':'light'} Mode`}</label>
+</div>
        </div>
      </div>
    </nav>
@@ -44,10 +49,10 @@ import PropTypes from 'prop-types'
         )
 
         
-Navbar.propTypes = {
+// Navbar.propTypes = {
               
-    title: PropTypes.string , 
-    aboutText : PropTypes.string ,
-  }
+//     title: PropTypes.string , 
+//     aboutText : PropTypes.string ,
+//   }
      
       }
