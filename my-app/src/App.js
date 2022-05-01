@@ -5,7 +5,11 @@ import TextForm from "./Component/TextForm";
 // import About from "./Component/About"
  import NavBar from "./Component/NavBar"
 // import  {useState} from "react";
+ 
 import React , {useState} from 'react'
+import Alret from "./Component/Alret";
+
+  
 
 //
 
@@ -14,18 +18,45 @@ function App() {
     
 
   const [mode, setMode] = useState('light');
+   const [alret, setAlret] = useState(null);
+
+     const showAlret = (msg , type)=> {
+     setAlret({
+       msg : msg ,
+       type : type 
+
+     })
+
+     }
+
+
+        setTimeout(() => {
+          setAlret(null);
+          
+        }, 1500);
+        
+
     const toggleMode = ()=> {
         if(mode==='dark'){
           setMode('light');
+          showAlret(" Light Mode have been Enabled" , "success")
            
-          document.body.style.backgroundColor = 'light';
+          
+          // window.getComputedStyle(document.body).backgroundColor ='light';
+
         }   
         else {
           setMode('dark');
-          document.body.style.backgroundColor = 'dark';
+          showAlret(" Dark Mode have been Enabled" , "success")
+        
+          // window.getComputedStyle(document.body).backgroundColor ='dark';
         } 
    
     }
+
+
+
+       
   return (
 
    
@@ -37,15 +68,17 @@ function App() {
     
    <  NavBar   title ="TextUtilis" mode={mode}  toggle={toggleMode} aboutText="About"/>
     
-   
+   <Alret   alret={alret} />
 
     
       <div className="container">
 
-        <TextForm heading=" Enter Your Text Here " mode={mode}  />
+        <TextForm heading=" Enter Your Text Here " showAlret={showAlret} mode={mode}    />
         {/* <About   toggle= {toggleMode} /> */}
 
       </div>
+        
+       
 
        </>
     

@@ -1,5 +1,6 @@
 import React from "react";
 // import PropTypes from 'prop-types'
+ import About from "./About";
 
 
       export default function Navbar (props){
@@ -20,7 +21,7 @@ import React from "react";
              <a className="nav-link active" aria-current="page" href="/">Home</a>
            </li>
            <li className="nav-item">
-             <a className="nav-link" href="/">{props.aboutText} </a>
+             <a className="nav-link" href="#About">{props.aboutText} </a>
            </li>
           
           

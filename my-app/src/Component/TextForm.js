@@ -12,6 +12,8 @@ import React , {useState} from 'react';
 
        let newText = text.toUpperCase();
        setText(newText);
+       props.showAlret(" Converted To LowerCase" , "success")
+
          
       }
 
@@ -21,6 +23,7 @@ import React , {useState} from 'react';
 
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlret(" Converted To UpperCase" , "success")
           
        }
 
@@ -29,6 +32,7 @@ import React , {useState} from 'react';
         let text = document.getElementById("myBox");
             text.select();
            navigator.clipboard.writeText(text.value);
+           props.showAlret(" Copied To ClipBoard" , "success")
 
 
      }
@@ -40,7 +44,7 @@ import React , {useState} from 'react';
 
         let newText = '';
         setText(newText);
-          
+        props.showAlret(" Text Cleared" , "success")
        }
 
     
@@ -87,7 +91,7 @@ import React , {useState} from 'react';
                       <p> {text.length>0 ? text : " Enter Your Text Here To Preview"}</p>
 
                   </div>
-
+                
 
 
 
