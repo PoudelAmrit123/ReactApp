@@ -39,7 +39,9 @@ function App() {
     const toggleMode = ()=> {
         if(mode==='dark'){
           setMode('light');
-          showAlret(" Light Mode have been Enabled" , "success")
+          showAlret(" Light Mode have been Enabled" , "success");
+           document.title = "Text Utility - Light Mode";
+            document.body.style.backgroundColor = "light"
            
           
           // window.getComputedStyle(document.body).backgroundColor ='light';
@@ -48,6 +50,8 @@ function App() {
         else {
           setMode('dark');
           showAlret(" Dark Mode have been Enabled" , "success")
+          document.title = "Text Utility - Dark Mode";
+          document.body.style.backgroundColor = "dark";
         
           // window.getComputedStyle(document.body).backgroundColor ='dark';
         } 

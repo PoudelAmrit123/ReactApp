@@ -13,7 +13,7 @@ export default function Alret(props) {
    
      props.alret && <div className={`alert alert-${props.alret.type} alert-dismissible fade show`} role="alert">
   <strong> {Capatial(props.alret.type)}</strong> :{props.alret.msg}
-  <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ 
 </div>
 
 
