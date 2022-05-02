@@ -11,12 +11,13 @@ export default function Alret(props) {
     
   return (
    
-     props.alret && <div className={`alert alert-${props.alret.type} alert-dismissible fade show`} role="alert">
+        <div  style={ {height : '80px'}}>
+     {props.alret && <div className={`alert alert-${props.alret.type} alert-dismissible fade show`} role="alert">
   <strong> {Capatial(props.alret.type)}</strong> :{props.alret.msg}
  
+</div>}
+
 </div>
-
-
 
   )
 }
